@@ -11,12 +11,19 @@ This is a fully functional basic React app seed. It comes with Redux and Passpor
 #### Should look something like this
 ```javascript
 module.exports = {
-  secret: "werlhkh4345^%#%lijlskdjre45hlkhjsir3$%^",
+  secret: "aetbmjljfcbn!%$*$nkrlhlkhnannalvlwher#$%66345nlk",
   auth0:{
     clientID: "Auth0 client ID goes here",
     clientSecret: "Auth0 client secret goes here"
   },
-  connectionString: "Your DB connection string goes here", 
+  connection: {
+    host: //host (you'll find this info in your heroku db credentials),
+    port: //port,
+    database: //database,
+    user: //user,
+    password: //password
+    ssl: true
+  },
   port: 3000
 };
 ```
