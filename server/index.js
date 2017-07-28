@@ -22,14 +22,13 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-var conn = massive.connectSync({
-  connectionString: config.connectionString
+massive(config.connection)
+.then( db => {
+  app.set('db', db);
 })
 
 
 app.use(express.static(__dirname + './../build'))
-app.set('db',conn);
-var db = app.get('db');
 
 var userController = require("./userController.js");
 
